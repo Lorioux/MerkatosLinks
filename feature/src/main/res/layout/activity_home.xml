@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/main.appbar"
+        android:layout_width="match_parent"
+        android:layout_height="156dp"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/main.title.collapse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleGravity="bottom"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/main.app.toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                app:layout_collapseMode="pin"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <fragment
+        android:id="@+id/main.fragment.id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="online.merkatos.merkatoslinks.feature.Main_Content_Fragment_Class"
+        class="online.merkatos.merkatoslinks.feature.Main_Content_Fragment_Class"
+        android:tag="@string/main_content_sec_tag"
+        app:layout_anchor="@id/main.appbar"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_anchorGravity="bottom"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/main_helpdesck_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:elevation="12dp"
+        android:focusable="true"
+        android:layout_gravity="bottom|right"
+        app:srcCompat="@drawable/ic_call_48px"
+        tools:targetApi="lollipop" />
+</android.support.design.widget.CoordinatorLayout>

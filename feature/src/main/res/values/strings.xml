@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Merkatos Links</string>
+    <string name="button">Button</string>
+    <string name="content_header">Culturas</string>
+    <string name="farm_market_alias">Campanha</string>
+    <string name="farm_in_produtos">Insumos</string>
+    <string name="farm_in_services">Serviços</string>
+    <string name="main_content_sec_tag">main_content_sec_frag</string>
+    <string name="farm_in_info">Notícias</string>
+
+</resources>

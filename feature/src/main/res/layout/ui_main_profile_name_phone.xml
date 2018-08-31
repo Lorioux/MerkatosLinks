@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/ui.main.user.profile_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="José Viagem"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textColorPrimaryLight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="José Viagem" />
+
+    <TextView
+        android:id="@+id/ui.main.user.profile_main_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="(+258) 84 530 8400"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ui.main.user.profile_name"
+        app:layout_constraintStart_toStartOf="@+id/ui.main.user.profile_name"
+        app:layout_constraintTop_toBottomOf="@+id/ui.main.user.profile_name"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="(+258) 84 530 8400" />
+
+</android.support.constraint.ConstraintLayout>

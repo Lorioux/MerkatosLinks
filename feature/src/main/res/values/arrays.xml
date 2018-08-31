@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="user_profile_type">
+        <item>Produtor Agricola</item>
+        <item>Extensionista</item>
+        <item>Provedor de Insumos</item>
+        <item>Comprador de produtos</item>
+    </string-array>
+
+    <string-array name="user_crop_name">
+        <item>Milho</item>
+        <item>Amendoim</item>
+        <item>Feijão Manteiga</item>
+        <item>Gergelim</item>
+    </string-array>
+    <string-array name="user_product_type">
+        <item>Fertilizante</item>
+        <item>Insecticida</item>
+        <item>Produtos culturais</item>
+        <item>Pesticidas</item>
+    </string-array>
+
+    <string-array name="user_province_name">
+        <item>Nampula</item>
+        <item>Sofala</item>
+        <item>Maputo</item>
+        <item>Niassa</item>
+        <item>Cabo Delgado</item>
+        <item>Zambêzia</item>
+        <item>Tete</item>
+        <item>Manica</item>
+        <item>Gaza</item>
+        <item>Inhambane</item>
+    </string-array>
+
+    <string-array name="user_district_name">
+        <item>Malema</item>
+        <item>Nampula</item>
+        <item>Mecuburi</item>
+        <item>Ribaue</item>
+        <item>Nacaroa</item>
+        <item>Irati</item>
+        <item>Monapo</item>
+        <item>Mussuril</item>
+        <item>Angoche</item>
+        <item>Larde</item>
+    </string-array>
+    <string-array name="user_company_name">
+        <item>IKURO</item>
+        <item>CULIMA</item>
+        <item>ETG</item>
+        <item>Agrifocus</item>
+        <item>Agri-Insumos</item>
+        <item>K2</item>
+        <item>Nenhuma</item>
+        <item>Outra</item>
+    </string-array>
+</resources>

@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="196dp"
-    android:layout_marginBottom="8dp">
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ui.main.carousel.piece.CView"
+    android:layout_width="128dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    card_view:cardCornerRadius="0dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/cultura_img"
-            android:layout_width="0dp"
-            android:layout_height="128dp"
+            android:id="@+id/ui.piece.image.ID"
+            android:layout_width="120dp"
+            android:layout_height="96dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:contentDescription="TODO"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,14 +30,16 @@
             app:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
-            android:id="@+id/cultura_nome"
+            android:id="@+id/ui.piece.desc.ID"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/ui_piece_description"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="@+id/ui.piece.image.ID"
+            app:layout_constraintStart_toStartOf="@+id/ui.piece.image.ID"
+            app:layout_constraintTop_toBottomOf="@+id/ui.piece.image.ID" />
+
     </android.support.constraint.ConstraintLayout>
+
 </android.support.v7.widget.CardView>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ui.main.member.dashboard.page"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:fitsSystemWindows="true"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:toolbarId="@+id/toolbar"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+            app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
+            app:contentScrim="?attr/colorPrimary">
+            <!--<android.support.v7.widget.Toolbar
+                android:id="@+id/dashboard_app_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"/>-->
+            <include layout="@layout/ui_main_profile_dashboard_header"
+                android:id="@+id/ui_main_profile_dashboard_header.include"
+                app:layout_scrollFlags="scroll|snap"
+                android:visibility="visible"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+<include layout="@layout/ui_main_content_recycler"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="56dp"
+    app:layout_anchor="@id/appbar"
+    app:layout_anchorGravity="bottom|center"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+<android.support.design.widget.BottomNavigationView
+    android:id="@+id/ui.main.member.dashboard.page.footer.nav"
+    android:background="@color/cardview_dark_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:menu="@menu/nav_footer_member_page_menu"
+    android:layout_gravity="bottom"/>
+
+</android.support.design.widget.CoordinatorLayout>

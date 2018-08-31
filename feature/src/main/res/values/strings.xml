@@ -1,11 +1,23 @@
 <resources>
-    <string name="app_name">Merkatos Links</string>
+    <string name="app_name">AgroLinks™</string>
     <string name="button">Button</string>
-    <string name="content_header">Culturas</string>
-    <string name="farm_market_alias">Campanha</string>
+    <string name="ui_content_header_crops_market">Comercialização agrícola</string>
+    <string name="ui_content_header_farm_inputs">Serviços e insumos agrícolas</string>
+    <string name="ui_content_header_farm_news">Notícias de agronegócios</string>
+    <string name="farm_market_alias">Campanhas</string>
     <string name="farm_in_produtos">Insumos</string>
     <string name="farm_in_services">Serviços</string>
     <string name="main_content_sec_tag">main_content_sec_frag</string>
     <string name="farm_in_info">Notícias</string>
+    <string name="title_services">Linha de cliente</string>
+    <string name="title_setttings">Configurações</string>
+    <string name="title_profile">Meu Perfil</string>
+    <string name="title_activity_registry">Cadastro</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Minha Página</string>
+    <string name="title_delete">Eliminar</string>
+    <string name="title_notifications">Notificações</string>
+    <string name="title_modifications">Modificar</string>
+    <string name="ui_piece_description">Cultura</string>
 
 </resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main.fragment.id"
+    android:name="online.merkatos.merkatoslinks.feature.Main_Content_Fragment_Class"
+    class="online.merkatos.merkatoslinks.feature.Main_Content_Fragment_Class"
+    android:tag="@string/main_content_sec_tag" />

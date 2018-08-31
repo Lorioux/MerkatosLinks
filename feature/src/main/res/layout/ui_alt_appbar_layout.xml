@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main.appbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CollapsingToolbarLayout
+        android:id="@+id/ui.alt.title.collapse"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        app:expandedTitleGravity="top"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+        app:collapsedTitleGravity="start"
+        android:visibility="gone">
+
+
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/alt.app.toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin" />
+    <!--app:navigationIcon="@drawable/ic_menu_24px"-->
+    <!--<include layout="@layout/ui_main_appbar_opt_layout"
+        android:id="@+id/ui_main_appbar_opt_layout.include"
+        android:visibility="visible"/>-->
+
+
+    <include layout="@layout/ui_tab_layout_model"
+        android:id="@+id/ui.alt.tabs.include"
+        android:visibility="gone"/>
+
+</android.support.design.widget.AppBarLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+     android:id="@+id/action_help"
+     android:title="@string/title_services"
+     android:orderInCategory="1"
+     app:showAsAction="always"
+     android:icon="@drawable/ic_perm_phone_msg_24px"/>
+    <item
+        android:id="@+id/action_personna"
+        android:title="@string/title_profile"
+        android:orderInCategory="2"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_person_48px"/>
+    <item
+        android:id="@+id/action_setting"
+        android:title="@string/title_setttings"
+        android:orderInCategory="3"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_settings_48px"/>
+
+</menu>

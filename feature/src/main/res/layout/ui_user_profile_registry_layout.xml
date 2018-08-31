@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Member_Registry_Activity">
+
+    <include layout="@layout/ui_alt_appbar_layout"
+        android:id="@+id/registry.appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/ui.user.registry.NS_V"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="64dp"
+        app:layout_anchor="@id/registry.appbar"
+        app:layout_anchorGravity="bottom|center_horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <EditText
+                    android:id="@+id/ui.user.profile_alt_phone"
+                    android:layout_width="136dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:digits="0123456789"
+                    android:ems="10"
+                    android:hint="86 530 8400"
+                    android:inputType="phone"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_desc_plus"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_desc_plus"
+                    app:layout_constraintTop_toBottomOf="@+id/ui.user.content_desc_plus" />
+
+                <TextView
+                    android:id="@+id/ui.user.content_dist_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Distrito:"
+                    android:textAlignment="viewEnd"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_type_label"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_type_label"
+                    app:layout_constraintTop_toBottomOf="@+id/ui.user.content_pro_label" />
+
+                <TextView
+                    android:id="@+id/ui.user.profile_country_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(+258)"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ui.user.content_desc_plus"
+                    app:layout_constraintStart_toEndOf="@+id/ui.user.profile_call_icon"
+                    app:layout_constraintTop_toTopOf="@+id/ui.user.content_desc_plus"
+                    tools:text="(+258)" />
+
+                <ImageView
+                    android:id="@+id/ui.user.content_photo"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@color/windowBackground"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ui.user.content_header"
+                    app:srcCompat="@drawable/ic_person_add_48px" />
+
+                <TextView
+                    android:id="@+id/ui.user.content_header"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Dados do Perfil"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/ui.user.content_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:ems="10"
+                    android:hint="Nome"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ui.user.content_photo"
+                    app:layout_constraintTop_toTopOf="@+id/ui.user.content_photo" />
+
+                <EditText
+                    android:id="@+id/ui.user.content_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="Apelido"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_name"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_name"
+                    app:layout_constraintTop_toBottomOf="@+id/ui.user.content_name" />
+
+                <EditText
+                    android:id="@+id/ui.user.content_desc_plus"
+                    android:layout_width="136dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:digits="0123456789"
+                    android:ems="10"
+                    android:hint="84 530 8400"
+                    android:inputType="phone"
+                    app:layout_constraintStart_toEndOf="@+id/ui.user.profile_country_code"
+                    app:layout_constraintTop_toBottomOf="@+id/ui.user.content_desc" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="16dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_name"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.profile_call_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/ui.user.profile_alt_phone" />
+
+                <TextView
+                    android:id="@+id/ui.user.content_type_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Tipo de perfil:"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_photo"
+                    app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+                <Spinner
+                    android:id="@+id/ui.user.content_type_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:entries="@array/user_profile_type"
+                    app:layout_constraintBottom_toBottomOf="@+id/ui.user.content_type_label"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_name"
+                    app:layout_constraintStart_toEndOf="@+id/ui.user.content_type_label"
+                    app:layout_constraintTop_toTopOf="@+id/ui.user.content_type_label" />
+
+                <TextView
+                    android:id="@+id/ui.user.content_pro_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Provincia:"
+                    android:textAlignment="viewEnd"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_type_label"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_type_label"
+                    app:layout_constraintTop_toBottomOf="@+id/ui.user.content_type_label" />
+
+                <Spinner
+                    android:id="@+id/ui.user.profile_residence_pro"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/user_province_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/ui.user.content_pro_label"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_name"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_type_spinner"
+                    app:layout_constraintTop_toTopOf="@+id/ui.user.content_pro_label" />
+
+                <Spinner
+                    android:id="@+id/ui.user.content_dist_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/user_district_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/ui.user.content_dist_label"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_name"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_type_spinner"
+                    app:layout_constraintTop_toTopOf="@+id/ui.user.content_dist_label" />
+
+                <ImageView
+                    android:id="@+id/ui.user.profile_call_icon"
+                    android:layout_width="36dp"
+                    android:layout_height="0dp"
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ui.user.content_desc_plus"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_photo"
+                    app:layout_constraintTop_toTopOf="@+id/ui.user.content_desc_plus"
+                    app:srcCompat="@drawable/ic_call_gray_48px" />
+
+                <TextView
+                    android:id="@+id/ui.user.content_org_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Organização:"
+                    android:textAlignment="viewEnd"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_type_label"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_type_label"
+                    app:layout_constraintTop_toBottomOf="@+id/ui.user.content_dist_label" />
+
+                <Spinner
+                    android:id="@+id/ui.user.content_org_name_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/user_company_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/ui.user.content_org_label"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_name"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_type_spinner"
+                    app:layout_constraintTop_toTopOf="@+id/ui.user.content_org_label" />
+
+                <EditText
+                    android:id="@+id/ui.user.content_org_add"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="Sua da organização"
+                    android:inputType="textPersonName"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_type_spinner"
+                    app:layout_constraintStart_toStartOf="@+id/ui.user.content_org_name_spinner"
+                    app:layout_constraintTop_toBottomOf="@+id/ui.user.content_org_name_spinner" />
+
+                <Button
+                    android:id="@+id/ui.registry.user.profile.submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Submeter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_name"
+                    app:layout_constraintTop_toBottomOf="@+id/ui.user.content_org_add" />
+
+                <ImageButton
+                    android:id="@+id/ui.user.profile_alt_phone_add_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ui.user.content_desc_plus"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_desc"
+                    app:layout_constraintStart_toEndOf="@+id/ui.user.content_desc_plus"
+                    app:layout_constraintTop_toTopOf="@+id/ui.user.content_desc_plus"
+                    app:srcCompat="@drawable/ic_add_24px" />
+
+                <ImageButton
+                    android:id="@+id/ui.user.profile_alt_phone_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/ui.user.profile_alt_phone"
+                    app:layout_constraintEnd_toEndOf="@+id/ui.user.content_header"
+                    app:layout_constraintStart_toEndOf="@+id/ui.user.profile_alt_phone"
+                    app:layout_constraintTop_toTopOf="@+id/ui.user.profile_alt_phone"
+                    app:srcCompat="@drawable/ic_delete_24px" />
+
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/nav_footer_profile_menu" /><!--
+        android:background="@color/windowBackground"-->
+</android.support.design.widget.CoordinatorLayout>

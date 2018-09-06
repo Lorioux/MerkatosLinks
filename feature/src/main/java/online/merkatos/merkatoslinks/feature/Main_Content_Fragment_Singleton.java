@@ -7,12 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class Main_Content_Fragment_Class extends Fragment {
+public class Main_Content_Fragment_Singleton extends Fragment {
 
-    public Main_Content_Fragment_Class(){}
+    public Main_Content_Fragment_Singleton(){}
 
-    public static Main_Content_Fragment_Class getInstance(int page){
-        Main_Content_Fragment_Class newInstance = new Main_Content_Fragment_Class();
+    public static Main_Content_Fragment_Singleton getInstance(int page){
+        Main_Content_Fragment_Singleton newInstance = new Main_Content_Fragment_Singleton();
         Bundle pages = new Bundle();
         pages.putInt("page", page);
         newInstance.setArguments(pages);

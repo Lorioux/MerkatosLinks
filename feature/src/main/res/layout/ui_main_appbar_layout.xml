@@ -9,18 +9,19 @@
 
     <android.support.design.widget.CollapsingToolbarLayout
         android:id="@+id/main.title.collapse"
+        app:toolbarId="@+id/main.app.toolbar"
         android:layout_width="match_parent"
-        android:layout_height="128dp"
+        android:layout_height="136dp"
         app:expandedTitleGravity="bottom"
-        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+        app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
         app:collapsedTitleGravity="start">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/main.app.toolbar"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="56dp" />  <!--
             app:layout_scrollFlags="scroll|snap"
-            app:layout_collapseMode="pin" />  <!--app:layout_collapseMode="parallax" app:navigationIcon="@drawable/ic_menu_24px"-->
+            app:layout_collapseMode="pin"app:layout_collapseMode="parallax" app:navigationIcon="@drawable/ic_menu_24px"-->
     </android.support.design.widget.CollapsingToolbarLayout>
 
     <include layout="@layout/ui_tab_layout_model" />

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
      android:id="@+id/action_help"
-     android:title="@string/title_services"
+     android:title="@string/title_support_line"
      android:orderInCategory="1"
      app:showAsAction="always"
      android:icon="@drawable/ic_perm_phone_msg_24px"/>

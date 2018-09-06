@@ -3,6 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main.fragment.id"
-    android:name="online.merkatos.merkatoslinks.feature.Main_Content_Fragment_Class"
-    class="online.merkatos.merkatoslinks.feature.Main_Content_Fragment_Class"
+    android:name="online.merkatos.merkatoslinks.feature.Main_Content_Fragment_Singleton"
+    class="online.merkatos.merkatoslinks.feature.Main_Content_Fragment_Singleton"
     android:tag="@string/main_content_sec_tag" />

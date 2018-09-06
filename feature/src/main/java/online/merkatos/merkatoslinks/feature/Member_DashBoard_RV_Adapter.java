@@ -19,10 +19,13 @@ public class Member_DashBoard_RV_Adapter extends RecyclerView.Adapter<Member_Das
     private final int DEFAULT_CONTENT_TYPE = -1;
     private final int mNumberOfFields;
 
+    private String[] headlines;
+
     Member_DashBoard_RV_Adapter(Context conetext, int numberOfItems, int numberOfFields){
         mContext = conetext;
         mNumberOfItems = numberOfItems;
         mNumberOfFields = numberOfFields;
+        headlines = new String[]{"Fertilizantes", "Insecticidas", "Pesticidas"};
     }
 
 
@@ -35,6 +38,7 @@ public class Member_DashBoard_RV_Adapter extends RecyclerView.Adapter<Member_Das
             return new DashboardPageViewHolder(content);
         } else if (0 == viewType){
             content = LayoutInflater.from(mContext).inflate(R.layout.ui_main_carousel_layout, parent, false);
+            content.findViewById(R.id.ui_main_carousel_LO_multi_piece_include).setVisibility(View.VISIBLE);
             return new DashboardPageViewHolder(content);
         }
         return null;
@@ -44,6 +48,7 @@ public class Member_DashBoard_RV_Adapter extends RecyclerView.Adapter<Member_Das
     public void onBindViewHolder(@NonNull DashboardPageViewHolder holder, int position) {
         DashboardPageViewHolder.imageHolder.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_add_gray_24px));
         DashboardPageViewHolder.descHolder.setText("Criar novo anúncio");
+        DashboardPageViewHolder.content_headlineHolder.setText(headlines[position]);
         DashboardPageViewHolder.imageHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,12 +68,13 @@ public class Member_DashBoard_RV_Adapter extends RecyclerView.Adapter<Member_Das
     public static class DashboardPageViewHolder extends RecyclerView.ViewHolder{
 
         public static ImageView imageHolder;
-        public static TextView descHolder;
+        public static TextView descHolder, content_headlineHolder;
 
         public DashboardPageViewHolder(View itemView) {
             super(itemView);
-            imageHolder = itemView.findViewById(R.id.ui_piece_image_ID);
-            descHolder = itemView.findViewById(R.id.ui_piece_desc_ID);
+            imageHolder = itemView.findViewById(R.id.ui_piece_Image_ID);
+            descHolder = itemView.findViewById(R.id.ui_piece_Topic_ID);
+            content_headlineHolder = itemView.findViewById(R.id.ui_main_carousel_header);
         }
     }
 

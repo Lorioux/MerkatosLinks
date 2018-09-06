@@ -243,7 +243,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:ems="10"
-                    android:hint="Sua da organização"
+                    android:hint="Nome da organ..."
                     android:inputType="textPersonName"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="@+id/ui.user.content_type_spinner"

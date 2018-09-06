@@ -53,12 +53,12 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="autoMirrored" value="true" />
-                            <entry key="height" value="48" />
+                            <entry key="height" value="18" />
                             <entry key="opacityPercent" value="99" />
-                            <entry key="outputName" value="ic_camera_alt_48px" />
+                            <entry key="outputName" value="ic_speaker_18px" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="V:\AndroidStudioProjects\GitHub\material-design-icons\image\svg\production\ic_camera_alt_48px.svg" />
-                            <entry key="width" value="48" />
+                            <entry key="sourceFile" value="V:\AndroidStudioProjects\GitHub\material-design-icons\communication\svg\production\ic_speaker_48px.svg" />
+                            <entry key="width" value="18" />
                           </map>
                         </option>
                       </PersistentState>

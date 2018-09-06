@@ -19,6 +19,6 @@
     <item
         android:id="@+id/navigation_support"
         android:icon="@drawable/ic_perm_phone_msg_black_24px"
-        android:title="@string/title_services" />
+        android:title="@string/title_support_line" />
 
 </menu>

@@ -62,8 +62,35 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".Member_Publish_Page_Activity"
+        <activity
+            android:name=".Member_Publish_Page_Activity"
             android:parentActivityName=".Member_DashBoard_Activity">
+            <intent-filter android:order="1">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="merkatos.online"
+                    android:pathPattern="/.*"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Main_More_Pieces_Activity">
+            <intent-filter android:order="1">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="merkatos.online"
+                    android:pathPattern="/.*"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Main_Campaigns_Content_Activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 

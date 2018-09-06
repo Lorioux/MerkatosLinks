@@ -183,7 +183,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:entries="@array/user_product_type"
+                    android:entries="@array/provider_product_type"
                     app:layout_constraintBottom_toBottomOf="@+id/ui.user.content_type_label"
                     app:layout_constraintEnd_toEndOf="@+id/ui.user.content_name"
                     app:layout_constraintStart_toEndOf="@+id/ui.user.content_type_label"

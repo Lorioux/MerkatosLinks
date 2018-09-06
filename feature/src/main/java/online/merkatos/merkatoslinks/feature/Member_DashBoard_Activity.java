@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,7 @@ public class Member_DashBoard_Activity extends AppCompatActivity implements Load
     private LinearLayoutManager mLinearLayoutManager;
     private Member_DashBoard_RV_Adapter mMemberDashboardAdapter;
     private final int LOADER_ID = R.id.ui_main_member_dashboard_page;
+    private TextView mContentHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,9 @@ public class Member_DashBoard_Activity extends AppCompatActivity implements Load
         //toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24px);
         /*CollapsingToolbarLayout cll = findViewById(R.id.ui_alt_title_collapse);
         cll.setVisibility(View.VISIBLE);*/
+
+        mContentHeader = findViewById(R.id.ui_main_content_header);
+        mContentHeader.setText("Provedor de serviços e insumos agrícolas");
 
         //Instantiate the recyclerview to display the members contents
         mRecyclerView = findViewById(R.id.main_recyclerView);

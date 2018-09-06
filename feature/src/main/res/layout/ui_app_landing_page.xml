@@ -41,7 +41,7 @@
     <ProgressBar
         android:id="@+id/app_land_page_progressBar"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp"
+        android:layout_width="128dp"
         android:layout_height="12dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/textView2"

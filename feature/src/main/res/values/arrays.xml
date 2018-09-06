@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="user_profile_type">
-        <item>Produtor Agricola</item>
+        <item>Produtor</item>
         <item>Extensionista</item>
-        <item>Provedor de Insumos</item>
+        <item>Provedor de serviços</item>
         <item>Comprador de produtos</item>
     </string-array>
 
@@ -13,11 +13,11 @@
         <item>Feijão Manteiga</item>
         <item>Gergelim</item>
     </string-array>
-    <string-array name="user_product_type">
+    <string-array name="provider_product_type">
         <item>Fertilizante</item>
         <item>Insecticida</item>
-        <item>Produtos culturais</item>
-        <item>Pesticidas</item>
+        <item>Pesticida</item>
+        <item>Pesticida</item>
     </string-array>
 
     <string-array name="user_province_name">

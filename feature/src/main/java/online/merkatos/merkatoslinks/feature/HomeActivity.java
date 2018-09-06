@@ -39,7 +39,6 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
     private static RecyclerView.LayoutManager mLinearLayoutManager;
 
     private static Toolbar mToolbar;
-    private Main_Content_View_Pager_Adapter_Class adapterViewPager;
     private static ImageView content_filter;
     private static GridView filter_list;
     private static ListAdapter listAdapter;
@@ -53,7 +52,6 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
     //Instatite the Context Object as a member variable
     private Context mContext;
     private static String mFilterValure;
-    private static View rootView = null;
     private LoadingMainUIContentAsyncTask loadUi;
     private CoordinatorLayout mMainContentLayout;
     private ProgressBar pb;
@@ -187,6 +185,7 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
         });
 
 
+
         mRecyclerView = mMainContentLayout.findViewById(R.id.main_recyclerView);
         //Set this recyclerview as fixed size
         //mRecyclerView.setHasFixedSize(true);
@@ -195,7 +194,8 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
 
-        mRecyclerViewAdapter = new Campaigns_RV_Adapter(this);
+        mRecyclerViewAdapter = new Main_Campaigns_Page_RV_Adapter(this, 3, 100);
+
         mRecyclerView.setAdapter(mRecyclerViewAdapter);
 
         //This is to ensure the filter is not open while the recyclerview is scrolling on small screens
@@ -209,12 +209,21 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
             }
         });
 
-        //getSupportFragmentManager().beginTransaction().add(new Main_Content_Fragment_Class(),"temp").commitNow();
+        //getSupportFragmentManager().beginTransaction().add(new Main_Content_Fragment_Singleton(),"temp").commitNow();
         tabLayout = mMainContentLayout.findViewById(R.id.main_tabLayout);
 
         //tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         tabLayout.addOnTabSelectedListener(this);
+
+        TextView more = mRecyclerView.findViewById(R.id.ui_main_carousel_more_btn);
+        /*more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent more_pieces_activity = new Intent(mContext, Main_More_Pieces_Activity.class);
+                mContext.startActivity(more_pieces_activity);
+            }
+        });*/
 
     }
 
@@ -229,7 +238,6 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
         super.onPostResume();
 
     }
-
 
     private class LoadingMainUIContentAsyncTask extends AsyncTask<Void,Void,Boolean>{
 
@@ -269,6 +277,8 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
         }
         switch (tab.getPosition()){
             case 0:
+                mRecyclerViewAdapter = new Main_Campaigns_Page_RV_Adapter(this,3,100);
+                mRecyclerView.setAdapter(mRecyclerViewAdapter);
                 if (mFilterValure == null ) {
                     content_header.setText(HEADER_RAW_TEXT[0]);
                 } else {
@@ -277,6 +287,8 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 }
                 break;
             case 1:
+                mRecyclerViewAdapter = new Main_Services_Page_RV_Adapter(this,3,101);
+                mRecyclerView.setAdapter(mRecyclerViewAdapter);
                 if (mFilterValure == null ) {
                     content_header.setText(HEADER_RAW_TEXT[1]);
                 } else {
@@ -287,6 +299,10 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 }
                 break;
             case 2:
+
+                mRecyclerViewAdapter = new Main_News_Page_RV_Adapter(this,6,100);
+                mRecyclerView.setAdapter(mRecyclerViewAdapter);
+
                 if (mFilterValure == null ) {
                     content_header.setText(HEADER_RAW_TEXT[2]);
                 } else {

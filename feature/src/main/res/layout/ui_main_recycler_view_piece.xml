@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ui.main.recyclerView.piece"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="16dp"
+    android:paddingHorizontal="8dp"
+    android:elevation="12dp"
+    android:orientation="horizontal"
+    android:scrollbars="none"
+    app:layoutManager="android.support.v7.widget.LinearLayoutManager" />

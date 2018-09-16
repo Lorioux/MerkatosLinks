@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <include layout="@layout/ui_main_content_recycler"
+            <include layout="@layout/ui_main_content_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_anchor="@id/main.appbar.include"

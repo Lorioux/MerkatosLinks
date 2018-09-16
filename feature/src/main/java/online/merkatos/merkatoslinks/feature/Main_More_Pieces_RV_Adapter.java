@@ -1,6 +1,7 @@
 package online.merkatos.merkatoslinks.feature;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -51,6 +52,16 @@ public class Main_More_Pieces_RV_Adapter extends RecyclerView.Adapter<Main_More_
             //Set the service provider name from the received data
             if (0 == position){
                 holder.cultura_nome.setText("Milho");
+                holder.cultura_imagem.setImageResource(R.drawable.img_corn);
+                holder.cultura_imagem.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent more_pieces_activity = new Intent(mContext, Main_Campaigns_Content_Activity.class);
+                        //more_pieces_activity.putExtra("seccao",0);
+                        mContext.startActivity(more_pieces_activity);
+                    }
+                });
+
             } else {
                 holder.cultura_nome.setText("Outros culturas");
             }
@@ -85,10 +96,10 @@ public class Main_More_Pieces_RV_Adapter extends RecyclerView.Adapter<Main_More_
         public ViewHolder(View container ) {
             super(container);
 
-            cultura_imagem = container.findViewById(R.id.ui_piece_Image_ID);
-            cultura_nome = container.findViewById(R.id.ui_piece_Topic_ID);
-            content_headlineHolder = itemView.findViewById(R.id.ui_main_carousel_header);
-            more_btnHolder = itemView.findViewById(R.id.ui_main_carousel_more_btn);
+            cultura_imagem = container.findViewById(R.id.ui_campaigns_piece_FARMER_PHOTO);
+            cultura_nome = container.findViewById(R.id.ui_alt_piece_FARMER_NAME);
+            content_headlineHolder = itemView.findViewById(R.id.ui_main_carousel_District_Name);
+            more_btnHolder = itemView.findViewById(R.id.ui_main_carousel_More_Pieces_Btn);
         }
     }
 

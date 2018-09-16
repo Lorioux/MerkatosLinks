@@ -13,11 +13,57 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"/>
     </android.support.design.widget.AppBarLayout>
-    <include
-        android:id="@+id/ui_main_content_recycler.include"
-        layout="@layout/ui_main_content_recycler"
+
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"/>
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <include
+
+            android:id="@+id/ui.main.all.containers.header.include"
+            layout="@layout/ui_main_all_containers_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <GridView
+            android:id="@+id/ui.more.all.pieces.GRID_LO"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:horizontalSpacing="0dp"
+            android:isScrollContainer="true"
+            android:numColumns="@integer/number_of_columns"
+            android:paddingStart="4dp"
+            android:verticalSpacing="4dp"
+            app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ui.main.all.containers.header.include"
+            app:layout_constraintStart_toStartOf="@+id/ui.main.all.containers.header.include"
+            app:layout_constraintTop_toBottomOf="@+id/ui.main.all.containers.header.include" />
+
+        <!--<include
+
+            android:id="@+id/ui_main_content_recycler.include"
+            layout="@layout/ui_main_recycler_view_piece"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ui_main_all_containers_header.include"
+            app:layout_constraintStart_toStartOf="@+id/ui_main_all_containers_header.include"
+            app:layout_constraintTop_toBottomOf="@+id/ui_main_all_containers_header.include" />-->
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.design.widget.CoordinatorLayout>

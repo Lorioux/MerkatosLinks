@@ -16,11 +16,11 @@ public class Main_One_Piece_Details_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ui_more_pieces_grid_layout);
+        setContentView(R.layout.ui_services_product_details_page);
 
-        Toolbar toolbar = findViewById(R.id.ui_more_pieces_LO_toolbar);
+        Toolbar toolbar = findViewById(R.id.alt_app_toolbar);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_24px));
-        toolbar.setTitle("Mais campanhas para si");
+        toolbar.setTitle("Detalhes do Produto");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,17 +28,5 @@ public class Main_One_Piece_Details_Activity extends AppCompatActivity {
             }
         });
 
-        //Instantiiate the recycler view
-        mRecyclerView = findViewById(R.id.main_recyclerView);
-        //Set this recyclerview as fixed size
-        //mRecyclerView.setHasFixedSize(true);
-
-        mGridLayoutManager = new GridLayoutManager(this, 3);
-
-        mRecyclerView.setLayoutManager(mGridLayoutManager);
-
-        mRecyclerViewAdapter = new Main_Campaigns_Page_RV_Adapter(this, 18,102);
-
-        mRecyclerView.setAdapter(mRecyclerViewAdapter);
     }
 }

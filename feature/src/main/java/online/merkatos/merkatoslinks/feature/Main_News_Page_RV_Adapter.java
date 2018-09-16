@@ -23,11 +23,17 @@ public class Main_News_Page_RV_Adapter extends RecyclerView.Adapter<Main_News_Pa
     * A constructor to take the a serializable content to be loaded into the views and a string parameter as signature for the view type to disp
     *
     */
-    Main_News_Page_RV_Adapter(Context context, @Nullable int numberOfItems, @Nullable int content_landscape_code){
+    private Main_News_Page_RV_Adapter(Context context, @Nullable int numberOfItems, @Nullable int content_landscape_code){
         mContext = context;
         landscape = content_landscape_code;
 
         mNumberOfItems = numberOfItems;
+    }
+
+    public static Main_News_Page_RV_Adapter getNewInstance(Context context, @Nullable int numberOfItems, @Nullable int content_landscape_code){
+
+        return new Main_News_Page_RV_Adapter(context, numberOfItems, content_landscape_code);
+
     }
 
     @NonNull
@@ -35,10 +41,18 @@ public class Main_News_Page_RV_Adapter extends RecyclerView.Adapter<Main_News_Pa
     public AdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //Let´s inflate the cardview layout that holds the image and description text.
         View carousel_container = null;
+
         if (landscape == 0){
+
             carousel_container = LayoutInflater.from(mContext).inflate(R.layout.ui_alt_carousel_piece_news, parent,false);
-        } else {
-            carousel_container = LayoutInflater.from(mContext).inflate(R.layout.ui_alt_carousel_piece_campaigns, parent,false);
+
+        } else if (landscape == 2){
+            carousel_container = LayoutInflater.from(mContext).inflate(R.layout.ui_alt_services_agents_piece, parent,false);
+        }
+        else {
+
+            carousel_container = LayoutInflater.from(mContext).inflate(R.layout.ui_alt_campaigns_farmers_piece, parent,false);
+
         }
 
         return new AdapterViewHolder(carousel_container);
@@ -46,6 +60,7 @@ public class Main_News_Page_RV_Adapter extends RecyclerView.Adapter<Main_News_Pa
 
     @Override
     public void onBindViewHolder(@NonNull AdapterViewHolder holder, int position) {
+
         if (landscape == 0){
             switch (position){
                 case 0:
@@ -75,7 +90,7 @@ public class Main_News_Page_RV_Adapter extends RecyclerView.Adapter<Main_News_Pa
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.ui_main_carousel_more_btn){
+        if (v.getId() == R.id.ui_main_carousel_More_Pieces_Btn){
             Intent more_pieces_activity = new Intent(mContext, Main_More_Pieces_Activity.class);
             mContext.startActivity(more_pieces_activity);
         }
@@ -90,13 +105,13 @@ public class Main_News_Page_RV_Adapter extends RecyclerView.Adapter<Main_News_Pa
         public AdapterViewHolder(View container ) {
             super(container);
 
-            cultura_imagem = container.findViewById(R.id.ui_piece_Image_ID);
-            content_headlineHolder = itemView.findViewById(R.id.ui_main_carousel_header);
+            cultura_imagem = container.findViewById(R.id.ui_campaigns_piece_FARMER_PHOTO);
+            content_headlineHolder = itemView.findViewById(R.id.ui_main_carousel_District_Name);
 
             memo_speaker = itemView.findViewById(R.id.ui_piece_desc_speaker_BTN);
             more_btnHolder = itemView.findViewById(R.id.ui_piece_desc_more_BTN);
-            topic_name = itemView.findViewById(R.id.ui_piece_Topic_ID);
-            topic_memo = itemView.findViewById(R.id.ui_piece_Topic_Memo_ID);
+            topic_name = itemView.findViewById(R.id.ui_alt_piece_FARMER_NAME);
+            topic_memo = itemView.findViewById(R.id.ui_alt_piece_QTY_Label);
 
         }
     }

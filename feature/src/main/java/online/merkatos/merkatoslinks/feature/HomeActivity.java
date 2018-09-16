@@ -86,8 +86,12 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
                 //Start the dashboad activity if the id is equal to dashboard id number
                 if (id == R.id.navigation_dashboard){
-                    Intent dashboard = new Intent( mContext, Member_DashBoard_Activity.class );
+                    Intent dashboard = new Intent( mContext, Main_Member_DashBoard_Activity.class );
                     startActivity(dashboard);
+                }
+                if (id == R.id.navigation_notifications){
+                    Intent notifications_page = new Intent( mContext, Main_Notifications_Page_Activity.class );
+                    startActivity(notifications_page);
                 }
                 return true;
             }
@@ -101,23 +105,35 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
         };
 
         mMainContentLayout = findViewById(R.id.ui_main_UI_drawer_CooLayout);
+
         //Instanciate the toobar to set the title and option_menu
         mToolbar = mMainContentLayout.findViewById(R.id.main_app_toolbar);
+
         mToolbar.setTitle(R.string.app_name);
+
         mToolbar.inflateMenu(R.menu.toobar_menu);
+
         mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.action_personna){
 
-                    Intent registry = new Intent(mContext, Member_Registry_Activity.class);
+                    Intent registry = new Intent(mContext, Main_Member_Registry_Activity.class);
                     startActivity(registry);
                     return true;
                 }
-                else {
-                    Toast.makeText(mContext, "Selected", Toast.LENGTH_SHORT).show();
+                if (id == R.id.action_setting){
+
+                    Class settingsActivity = Main_User_SettingsActivity.class;
+
+                    Intent registry = new Intent(mContext, settingsActivity);
+                    startActivity(registry);
+
                     return true;
+                } else {
+                    Toast.makeText(mContext, "Selected", Toast.LENGTH_SHORT).show();
+                    return false;
                 }
             }
         });
@@ -184,46 +200,41 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
             }
         });
 
-
-
-        mRecyclerView = mMainContentLayout.findViewById(R.id.main_recyclerView);
+        mRecyclerView = mMainContentLayout.findViewById(R.id.ui_main_content_RecyclerViewer);
         //Set this recyclerview as fixed size
-        //mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setHasFixedSize(false);
 
         mLinearLayoutManager = new LinearLayoutManager(this);
 
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
 
-        mRecyclerViewAdapter = new Main_Campaigns_Page_RV_Adapter(this, 3, 100);
+        mRecyclerViewAdapter = Main_Campaigns_Page_RV_Adapter.getNewInstance(this, 3);
 
         mRecyclerView.setAdapter(mRecyclerViewAdapter);
 
-        //This is to ensure the filter is not open while the recyclerview is scrolling on small screens
+        //This is to ensure the filter is not open while the recyclerview is scrolling on small screens.
         mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+
                 super.onScrollStateChanged(recyclerView, newState);
+
                 if (newState != RecyclerView.SCROLL_STATE_IDLE && filter_list.getVisibility() == View.VISIBLE){
+
                     filter_list.setVisibility(GONE);
+
                 }
             }
         });
 
-        //getSupportFragmentManager().beginTransaction().add(new Main_Content_Fragment_Singleton(),"temp").commitNow();
+
         tabLayout = mMainContentLayout.findViewById(R.id.main_tabLayout);
 
-        //tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
 
         tabLayout.addOnTabSelectedListener(this);
 
-        TextView more = mRecyclerView.findViewById(R.id.ui_main_carousel_more_btn);
-        /*more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent more_pieces_activity = new Intent(mContext, Main_More_Pieces_Activity.class);
-                mContext.startActivity(more_pieces_activity);
-            }
-        });*/
+
 
     }
 
@@ -246,15 +257,15 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
          */
         //Context context;
         public LoadingMainUIContentAsyncTask() {
-            super();
+
         }
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            long time = SystemClock.elapsedRealtime();
             do {
 
-            } while (SystemClock.elapsedRealtime() != (time+5000) );
+            } while (SystemClock.currentThreadTimeMillis() <= 5000);
+
             return true;
         }
 
@@ -262,11 +273,13 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
         protected void onPostExecute(final Boolean result) {
             super.onPostExecute(result);
             lp.setVisibility(GONE);
+            drawer.setVisibility(View.VISIBLE);
             ViewGroup v = (ViewGroup) drawer.getParent();
             v.removeView(drawer);
-            drawer.setVisibility(View.VISIBLE);
             HomeActivity.this.setContentView(drawer);
         }
+
+
     }
 
     @Override
@@ -277,7 +290,7 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
         }
         switch (tab.getPosition()){
             case 0:
-                mRecyclerViewAdapter = new Main_Campaigns_Page_RV_Adapter(this,3,100);
+                mRecyclerViewAdapter = Main_Campaigns_Page_RV_Adapter.getNewInstance(this,3);
                 mRecyclerView.setAdapter(mRecyclerViewAdapter);
                 if (mFilterValure == null ) {
                     content_header.setText(HEADER_RAW_TEXT[0]);
@@ -287,7 +300,7 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 }
                 break;
             case 1:
-                mRecyclerViewAdapter = new Main_Services_Page_RV_Adapter(this,3,101);
+                mRecyclerViewAdapter = Main_Services_Page_RV_Adapter.getNewInstance(this,3);
                 mRecyclerView.setAdapter(mRecyclerViewAdapter);
                 if (mFilterValure == null ) {
                     content_header.setText(HEADER_RAW_TEXT[1]);
@@ -300,7 +313,7 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 break;
             case 2:
 
-                mRecyclerViewAdapter = new Main_News_Page_RV_Adapter(this,6,100);
+                mRecyclerViewAdapter = Main_News_Page_RV_Adapter.getNewInstance(this,6,0);
                 mRecyclerView.setAdapter(mRecyclerViewAdapter);
 
                 if (mFilterValure == null ) {
@@ -326,4 +339,5 @@ public class HomeActivity extends AppCompatActivity implements TabLayout.OnTabSe
     @Override
     public void onTabReselected(TabLayout.Tab tab) {
     }
+
 }

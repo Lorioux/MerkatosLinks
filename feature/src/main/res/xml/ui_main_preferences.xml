@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Definições de perfil do utilizador">
+
+    <PreferenceCategory
+        android:title="PERFIL D0 UTILIZADOR"
+        android:key="@string/preference_user_profile" >
+
+        <Preference
+            android:icon="@drawable/ic_person_outline_24px"
+            android:defaultValue="Produtor"
+            android:summary="Produtor agrícola"
+            android:title="Tipo de usuário"
+            android:selectable="false"/>
+
+        <Preference
+            android:icon="@drawable/ic_lock_open_24px"
+            android:defaultValue="Temporário"
+            android:summary="Uso temporário"
+            android:title="Estado do perfil"
+            android:selectable="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="MODO DE COMUNICAÇÃO"
+        android:key="@string/preference_user_communications">
+
+        <SwitchPreference
+            android:id="@+id/ui_user_notification_preference"
+            android:checked="true"
+            android:defaultValue="@bool/preference_notify_mode_def_value"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:key="@string/preference_notify_mode_key"
+            android:title="Receber notificações" /><!--
+            android:summary="Sim"android:checked="@bool/preference_notify_mode_def_value"-->
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

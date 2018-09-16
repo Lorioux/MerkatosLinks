@@ -4,22 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ui.main.carousel_LO"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
     android:layout_marginBottom="8dp"
     app:cardBackgroundColor="#faf7f7"
     tools:context=".HomeActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <android.support.v7.widget.ButtonBarLayout
-            android:id="@+id/ui.main.carousel_btn_LO"
+            android:id="@+id/ui.main.carousel_btnBAR_LO"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:fadeScrollbars="false"
             android:scrollbarAlwaysDrawHorizontalTrack="false"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,10 +28,9 @@
 
             <TextView
 
-                android:id="@+id/ui.main.carousel_header"
+                android:id="@+id/ui.main.carousel_District_Name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_height="match_parent"
                 android:layout_weight="0.7"
                 android:text="Distrito"
                 android:textAllCaps="false"
@@ -39,39 +38,51 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/ui.main.carousel_more_btn"
+                android:id="@+id/ui.main.carousel_More_Pieces_Btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_height="match_parent"
                 android:text="Mais"
+                android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </android.support.v7.widget.ButtonBarLayout>
 
         <include
+            layout="@layout/ui_main_recycler_view_piece"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ui.main.carousel_btnBAR_LO" /><!--android:id="@+id/ui_main_recycler_view_piece.include"-->
+
+
+        <!--<include
             android:id="@+id/ui.main.carousel_LO.multi.piece.include"
             layout="@layout/ui_main_carousel_hs_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ui.main.carousel_btn_LO"
-            android:visibility="gone"/> <!--
+            app:layout_constraintTop_toBottomOf="@+id/ui.main.carousel_btnBAR_LO" />--> <!--
             android:layout_marginTop="8dp"-->
 
-        <include
+        <!--<include
             android:id="@+id/ui.main.carousel_LO.single.piece.include"
             layout="@layout/ui_alt_carousel_piece_news"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ui.main.carousel_btn_LO"
-            android:visibility="gone"/> <!--android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/ui.main.carousel_btnBAR_LO" />-->
+        <!--android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"-->

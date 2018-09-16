@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ui.alt.carousel.piece.CView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    card_view:cardCornerRadius="0dp"
+    tools:context=".Main_Services_Content_Activity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ui.campaigns.piece.AGENT_PHOTO"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="TODO"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_person_outline_48px" />
+
+        <TextView
+            android:id="@+id/ui.alt.piece.AGENT_NAME"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Aurélio Miqua"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/ui.campaigns.piece.AGENT_PHOTO"
+            app:layout_constraintTop_toTopOf="@+id/ui.campaigns.piece.AGENT_PHOTO" />
+
+        <TextView
+            android:id="@+id/ui.main.piece.LOCAL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Posto Administrativo 4º Congresso"
+            app:layout_constraintEnd_toEndOf="@+id/ui.alt.piece.AGENT_NAME"
+            app:layout_constraintStart_toStartOf="@+id/ui.alt.piece.AGENT_NAME"
+            app:layout_constraintTop_toBottomOf="@+id/ui.alt.piece.AGENT_NAME" />
+
+        <android.support.v7.widget.ButtonBarLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ui.alt.piece.AGENT_NAME"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/ui.alt.piece.AGENT_NAME"
+            app:layout_constraintTop_toBottomOf="@+id/ui.main.piece.LOCAL">
+
+            <TextView
+                android:id="@+id/ui.piece.CONTACT_LABEL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Contacto:"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ui.campaigns.piece.FARMER_PHOTO"
+                app:layout_constraintStart_toStartOf="@+id/ui.alt.piece.FARMER_NAME"
+                app:layout_constraintTop_toBottomOf="@+id/ui.main.piece.LOCAL" />
+
+            <TextView
+                android:id="@+id/ui.piece.CONTACT_NUM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="(+258) 84 530 8400"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+        </android.support.v7.widget.ButtonBarLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

@@ -18,12 +18,12 @@ import java.util.ArrayList;
 
 //This class implements LoaderManager callbacks to load content on backgroung.
 
-public class Member_DashBoard_Activity extends AppCompatActivity implements LoaderManager.LoaderCallbacks <ArrayList<String>> {
+public class Main_Member_DashBoard_Activity extends AppCompatActivity implements LoaderManager.LoaderCallbacks <ArrayList<String>> {
 
     private Context mContext;
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLinearLayoutManager;
-    private Member_DashBoard_RV_Adapter mMemberDashboardAdapter;
+    private Main_Member_DashBoard_RV_Adapter mMemberDashboardAdapter;
     private final int LOADER_ID = R.id.ui_main_member_dashboard_page;
     private TextView mContentHeader;
 
@@ -46,28 +46,36 @@ public class Member_DashBoard_Activity extends AppCompatActivity implements Load
         mContentHeader.setText("Provedor de serviços e insumos agrícolas");
 
         //Instantiate the recyclerview to display the members contents
-        mRecyclerView = findViewById(R.id.main_recyclerView);
+        mRecyclerView = findViewById(R.id.ui_main_content_RecyclerViewer);
 
         //Instatiate the GridLayoutManager to handle the recyclerview content
         mLinearLayoutManager = new LinearLayoutManager(mContext);
+
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
 
         //Instantiate the content adapter class for the recyclerview
-        mMemberDashboardAdapter = new Member_DashBoard_RV_Adapter(mContext,0, 3);
+        mMemberDashboardAdapter = new Main_Member_DashBoard_RV_Adapter(mContext,0, 3);
+
         mRecyclerView.setAdapter(mMemberDashboardAdapter);
 
-        //getSupportLoaderManager().initLoader(LOADER_ID, null,this);
 
         //To Handle the Bottom Navigation
         BottomNavigationView footer_nav = findViewById(R.id.ui_main_member_dashboard_page_footer_nav);
+
         footer_nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
                 int id = item.getItemId();
+
                 if (id == R.id.navigation_profile){
-                    Intent registry = new Intent(mContext, Member_Registry_Activity.class);
+                    Intent registry = new Intent(mContext, Main_Member_Registry_Activity.class);
                     startActivity(registry);
                     return true;
+                }
+                if (id == R.id.navigation_notifications){
+                    Intent notifications_page = new Intent( mContext, Main_Notifications_Page_Activity.class );
+                    startActivity(notifications_page);
                 }
                 return true;
             }
@@ -85,15 +93,6 @@ public class Member_DashBoard_Activity extends AppCompatActivity implements Load
 
     }
 
-    /**
-     * Called when a previously created loader is being reset, and thus
-     * making its data unavailable.  The application should at this point
-     * remove any references it has to the Loader's data.
-     * <p>
-     * <p>This will always be called from the process's main thread.
-     *
-     * @param loader The Loader that is being reset.
-     */
     @Override
     public void onLoaderReset(@NonNull Loader<ArrayList<String>> loader) {
 

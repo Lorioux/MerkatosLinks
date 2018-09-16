@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Member_Registry_Activity"
+            android:name=".Main_Member_Registry_Activity"
             android:parentActivityName=".HomeActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -48,7 +48,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Member_DashBoard_Activity"
+            android:name=".Main_Member_DashBoard_Activity"
             android:parentActivityName=".HomeActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -63,8 +63,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Member_Publish_Page_Activity"
-            android:parentActivityName=".Member_DashBoard_Activity">
+            android:name=".Main_Member_Publish_Page_Activity"
+            android:parentActivityName=".Main_Member_DashBoard_Activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -102,6 +102,31 @@
                     android:pathPattern="/.*"
                     android:scheme="https" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Main_User_SettingsActivity"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <activity android:name=".Main_Notifications_Page_Activity">
+            <intent-filter android:order="1">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="merkatos.online"
+                    android:pathPattern="/.*"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Main_Services_Content_Activity"
+            android:parentActivityName=".HomeActivity">
+        </activity>
+
+        <activity android:name=".Main_One_Piece_Details_Activity"
+            android:parentActivityName=".Main_Services_Content_Activity">
         </activity>
     </application>
 

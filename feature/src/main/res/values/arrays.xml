@@ -7,12 +7,6 @@
         <item>Comprador de produtos</item>
     </string-array>
 
-    <string-array name="user_crop_name">
-        <item>Milho</item>
-        <item>Amendoim</item>
-        <item>Feijão Manteiga</item>
-        <item>Gergelim</item>
-    </string-array>
     <string-array name="provider_product_type">
         <item>Fertilizante</item>
         <item>Insecticida</item>

@@ -23,6 +23,6 @@ public class Main_Content_Fragment_Singleton extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //Inflate the fragment layout here as a View
-        return getLayoutInflater().inflate(R.layout.ui_main_content_recycler,container,false);
+        return getLayoutInflater().inflate(R.layout.ui_main_content_container,container,false);
     }
 }

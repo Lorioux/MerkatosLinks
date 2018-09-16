@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ui.notifications.piece.Author_Photo"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_person_24px" />
+
+        <TextView
+            android:id="@+id/ui.notifications.piece.Author_Name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:text="Nome do remetente"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ui.notifications.piece.Author_Photo"
+            app:layout_constraintTop_toTopOf="@+id/ui.notifications.piece.Author_Photo" />
+
+        <TextView
+            android:id="@+id/ui.notifications.piece.CONTENT"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tenho 5000 KG de millho branco no Posto Administrativo de Mutivaze"
+            app:layout_constraintEnd_toEndOf="@+id/ui.notifications.piece.Author_Name"
+            app:layout_constraintStart_toStartOf="@+id/ui.notifications.piece.Author_Name"
+            app:layout_constraintTop_toBottomOf="@+id/ui.notifications.piece.Author_Name"
+            tools:text="Tenho 5000 KG de millho branco no Posto Administrativo de Mutivaze" />
+
+        <TextView
+            android:id="@+id/ui.notifications.piece.DateTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="8dp"
+            android:text="Sábado, 15 de Setembro 2018"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ui.notifications.piece.CONTENT"
+            app:layout_constraintStart_toStartOf="@+id/ui.notifications.piece.Author_Name"
+            app:layout_constraintTop_toBottomOf="@+id/ui.notifications.piece.CONTENT" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
+<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/ui.notifications.piece.Author_Photo"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_person_24px" />
+
+    <TextView
+        android:id="@+id/ui.notifications.piece.Author_Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:text="Nome do remetente"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ui.notifications.piece.Author_Photo"
+        app:layout_constraintTop_toTopOf="@+id/ui.notifications.piece.Author_Photo" />
+
+    <TextView
+        android:id="@+id/ui.notifications.piece.CONTENT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tenho 5000 KG de millho branco no Posto Administrativo de Mutivaze"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="@+id/ui.notifications.piece.Author_Name"
+        app:layout_constraintStart_toStartOf="@+id/ui.notifications.piece.Author_Name"
+        app:layout_constraintTop_toBottomOf="@+id/ui.notifications.piece.Author_Name"
+        tools:text="Tenho 5000 KG de millho branco no Posto Administrativo de Mutivaze" />
+
+    <TextView
+        android:id="@+id/ui.notifications.piece.DateTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="8dp"
+        android:text="Sábado, 15 de Setembro 2018"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ui.notifications.piece.CONTENT"
+        app:layout_constraintStart_toStartOf="@+id/ui.notifications.piece.Author_Name"
+        app:layout_constraintTop_toBottomOf="@+id/ui.notifications.piece.CONTENT" />
+
+</android.support.constraint.ConstraintLayout>-->
+

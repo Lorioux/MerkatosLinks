@@ -14,7 +14,7 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:toolbarId="@+id/toolbar"
+            app:toolbarId="@+id/ui.services.advs.ToolBar"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
             app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
             app:contentScrim="?attr/colorPrimary">
@@ -33,7 +33,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-<include layout="@layout/ui_main_content_recycler"
+<include layout="@layout/ui_main_content_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="56dp"

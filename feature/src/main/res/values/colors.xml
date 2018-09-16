@@ -2,17 +2,12 @@
 <resources>
     <color name="colorPrimaryDark">#388E3C</color><!--#388E3C-->
     <color name="colorPrimary">#4CAF50</color><!--#4CAF50-->
-    <color name="colorPrimaryLight">#C8E6C9</color><!--#C8E6C9-->
+    <!--#C8E6C9-->
     <color name="colorAccent">#F50057</color><!--#F50057-->
 
     <color name="textColorPrimary">#212121</color><!--#ffffff-->
     <color name="textColorSecondary">#757575</color><!--#90000000-->
     <color name="windowBackground">#C0C3C6</color>
-    <color name="iconTint">#FFFFFF</color>
-    <color name="divider">#BDBDBD</color>
-    <color name="rowBackgroung"></color>
-    <color name="titleTextColor">#ffffff</color>
-    <color name="buttonColor"></color>
     <color name="textColorPrimaryLight">#ffffff</color>
 
 </resources>

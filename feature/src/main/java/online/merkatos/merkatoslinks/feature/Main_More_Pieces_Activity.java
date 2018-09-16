@@ -4,14 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.TextView;
 
 public class Main_More_Pieces_Activity extends AppCompatActivity {
 
-    private RecyclerView mRecyclerView;
+    private GridView mGridView;
     private GridLayoutManager mGridLayoutManager;
     private Main_More_Pieces_RV_Adapter mRecyclerViewAdapter;
     private static String[] HEADER_RAW_TEXT;
@@ -19,6 +19,7 @@ public class Main_More_Pieces_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.ui_more_pieces_grid_layout);
 
         Intent calling_intent = getIntent();
@@ -45,16 +46,12 @@ public class Main_More_Pieces_Activity extends AppCompatActivity {
         content_header.setText(HEADER_RAW_TEXT[mCodigoSeccao]);
 
         //Instantiiate the recycler view
-        mRecyclerView = findViewById(R.id.main_recyclerView);
+        mGridView = findViewById(R.id.ui_more_all_pieces_GRID_LO);
+        mGridView.setHorizontalScrollBarEnabled(true);
         //Set this recyclerview as fixed size
         //mRecyclerView.setHasFixedSize(true);
+        Main_Base_Adapter adapter = new Main_Base_Adapter(this, 12, R.layout.ui_main_carousel_piece);
 
-        mGridLayoutManager = new GridLayoutManager(this,3);
-
-        mRecyclerView.setLayoutManager(mGridLayoutManager);
-
-        mRecyclerViewAdapter = new Main_More_Pieces_RV_Adapter(this, 6,mCodigoSeccao);
-
-        mRecyclerView.setAdapter(mRecyclerViewAdapter);
+       mGridView.setAdapter(adapter);
     }
 }

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ui.main.content_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp">
+
+    <include layout="@layout/ui_main_all_containers_header"
+        android:id="@+id/ui.main.all.containers.header.include"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <GridView
+        android:id="@+id/ui.main.content.header_filter_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:columnWidth="90dp"
+        android:elevation="12dp"
+        android:fadingEdge="horizontal"
+        android:gravity="start"
+        android:horizontalSpacing="4dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/ui.main.all.containers.header.include"
+        app:layout_constraintStart_toStartOf="@+id/ui.main.all.containers.header.include"
+        app:layout_constraintTop_toBottomOf="@+id/ui.main.all.containers.header.include">
+
+    </GridView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ui.main.content.RecyclerViewer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:dividerHeight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ui.main.all.containers.header.include"
+        app:layout_constraintStart_toStartOf="@+id/ui.main.all.containers.header.include"
+        app:layout_constraintTop_toBottomOf="@+id/ui.main.content.header_filter_list" /> <!--android:background="@color/cardview_light_background"-->
+
+</android.support.constraint.ConstraintLayout>
+
